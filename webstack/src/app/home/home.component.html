@@ -1,0 +1,13 @@
+
+<div class="page-container">
+    <!--sidebar-->
+    <div class="sidebar-menu toggle-others fixed">
+        <app-sidebar (product)="handlerProduct($event)"></app-sidebar>
+    </div>
+    <!--content-->
+    <div class="main-content">
+        <app-navbar></app-navbar>
+        <app-content [content]="content"></app-content>
+        <app-footer></app-footer>
+    </div>
+</div>
