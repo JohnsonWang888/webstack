@@ -18,19 +18,30 @@ export class SidebarComponent implements OnInit {
   constructor(private productService:ProductService, private http:HttpClient) { }
 
   ngOnInit() {
-    this.productService.getProductByName("常用推荐").subscribe(
+    this.productService.getProductByName().subscribe(
       result => {
         this.products = JSON.parse(result);
-        this.product.emit(this.products);
+        let product = this.products.filter(product => {
+          if(product.type === "常用推荐") {
+            return product;
+          }
+        })
+        console.log(product);
+        this.product.emit(product);
       }
     );
   }
 
   clickItem(name: string) {
-    this.productService.getProductByName(name).subscribe(
+    this.productService.getProductByName().subscribe(
       result => {
-        this.products = result;
-        this.product.emit(this.products);
+        this.products = JSON.parse(result);
+        let product = this.products.filter(product => {
+          if(product.type === name) {
+            return product;
+          }
+        })
+        this.product.emit(product);
       }
     );
   }

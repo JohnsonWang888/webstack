@@ -20,12 +20,8 @@ export class ProductService {
 
   constructor(private http:HttpClient) { }
 
-  getProductByName(name:string): Observable<any> {
-    return this.http.get<Product>("/mock/5bbf29acebbb4b23210fce84/webstack");
-  }
-
-  getDataByJsonp() {
-    
+  getProductByName(): Observable<any> {
+    return this.http.get<Product>(this.baseUrl);
   }
 }
 
