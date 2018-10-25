@@ -1,0 +1,9 @@
+.header-btn {
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.header-input {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

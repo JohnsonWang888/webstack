@@ -1,0 +1,50 @@
+<form [formGroup]="myForm">
+    <div class="form-group">
+        <label for="detail">详情:</label>
+        <input type="text" placeholder="请输入描述" class="form-control" id="detail" formControlName="detail"/>
+        <div [hidden]="myForm.get('detail').valid || myForm.get('detail').untouched">
+            <p [hidden]="!myForm.hasError('required', 'detail')">此项必填</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="order">顺序:</label>
+        <input type="text" placeholder="请输入顺序" class="form-control" id="order" formControlName="order" />
+        <!-- 当输入框没有访问的时候或者合法的时候不显示 -->
+        <div [hidden]="myForm.get('order').valid || myForm.get('order').untouched">
+            <p [hidden]="!myForm.hasError('required','order')">此项必填</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="url">url:</label>
+        <input type="text" placeholder="请输入url" class="form-control" id="url" formControlName="url"/>
+        <div [hidden]="myForm.get('url').valid || myForm.get('url').untouched">
+            <p [hidden]="!myForm.hasError('required', 'url')">此项必填</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="projectName">projectName:</label>
+        <input type="text" placeholder="请输入projectName" class="form-control" id="projectName" formControlName="projectName"/>
+        <div [hidden]="myForm.get('projectName').valid || myForm.get('projectName').untouched">
+            <p [hidden]="!myForm.hasError('required', 'projectName')">此项必填</p>
+        </div>
+    </div>
+    <!-- <div formGroupName="password" style="border:none;">
+        <div class="form-group">
+            <label>密码:</label>
+            <input type="password" class="form-control" placeholder="请输入密码" formControlName="pass1" />
+        </div>
+        <div class="form-group">
+            <label>确认密码:</label>
+            <input type="password" class="form-control" placeholder="请再次输入密码" formControlName="pass2" />
+        </div>
+        <div>
+            <p [hidden]="!myForm.hasError('passValidator','password')">
+                {{myForm.getError('passValidator','password')?.info}}
+            </p>
+        </div>
+    </div> -->
+    <button type="button" class="btn btn-info" [disabled]="!myForm.valid" (click)="postDate()">提交</button>
+    <button type="button" class="btn btn-warning" [routerLink]="['']">返回</button>
+</form>
+

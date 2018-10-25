@@ -1,0 +1,23 @@
+<nav class="navbar user-info-navbar" role="navigation">
+  <ul class="user-info-menu left-links list-inline list-unstyled">
+      <li class="hidden-sm hidden-xs">
+          <a href="#" data-toggle="sidebar">
+              <i class="fa-bars"></i>
+          </a>
+      </li>
+      <li class="dropdown hover-line language-switcher">
+          <a style="padding-top: 20px;">
+            <!-- [routerLink]="['/addProject']" -->
+            <button type="button" class="btn btn-info header-btn" (click)="goAddProject()">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                 增加
+            </button>
+          </a>
+      </li>
+      <li class="dropdown hover-line language-switcher">
+            <a style="padding-top: 20px;">
+                <input type="text" class="form-control header-input" placeholder="Search for..." [formControl]="titleFilter">
+            </a>
+        </li>
+  </ul>
+</nav>

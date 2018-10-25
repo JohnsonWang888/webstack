@@ -1,6 +1,0 @@
-{
-  "/mock":{
-    "target":"http://192.168.0.46:11099",
-    "secure":false  
-  }
-}

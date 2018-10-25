@@ -1,0 +1,23 @@
+<app-header (changeTitle)="titleChange($event)"></app-header>
+<div *ngFor="let project of allProjects | filter:'name':keyword">
+  <h4 class="text-gray"><i class="linecons-tag" style="margin-right: 7px;" [id]="project.name"></i>{{project.name}}</h4>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let content of project.data" (click)="goDetail(content)">
+      <!-- onclick="window.open('https://dribbble.com/', '_blank')",data-original-title="https://dribbble.com/" -->
+      <div class="xe-widget xe-conversations box2 label-info" data-toggle="tooltip" data-placement="bottom" title="">
+        <div class="xe-comment-entry">
+          <a class="xe-user-img">
+            <img [src]="content.img" class="img-circle" width="40">
+          </a>
+          <div class="xe-comment">
+            <a href="javacript:void(0);" class="xe-user-name overflowClip_1">
+              <strong>{{content.name}}</strong>
+            </a>
+            <p class="overflowClip_2">全球UI设计师作品分享平台。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+</div>
